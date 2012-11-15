@@ -37,20 +37,7 @@
 A set of tests for the Gengo API. They all require an internet connection.
 """
 
-# @unittest.skip doesn't exist in Python < 2.7 so you will need unittest2
-# from pip in this case
-# pip install unittest2
 import unittest
-try:
-    unittest.__getattribute__('skip')
-except AttributeError:
-    try:
-        import unittest2 as unittest
-    except ImportError:
-        raise Exception("The unittest module is missing the " +
-                        "required skip attribute. Either use " +
-                        " Python 2.7, or `pip install unittest2`")
-
 import os
 import random
 import time
@@ -517,13 +504,6 @@ class TestGlossaryFunctions(unittest.TestCase):
     def test_getGlossaryList(self):
         resp = self.gengo.getGlossaryList()
         self.assertEqual(resp['opstat'], 'ok')
-
-    @unittest.skip("unless you created a glossary on the site (not yet " +
-                   "supported via the API) this test does not make a " +
-                   " lot of sense.")
-    def test_getGlossary(self):
-        resp = self.gengo.getGlossary(id=42)
-        resp
 
 
 if __name__ == '__main__':
