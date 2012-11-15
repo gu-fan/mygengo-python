@@ -137,7 +137,7 @@ class TestTranslationSingleJobFlow(unittest.TestCase):
 
         job = self.gengo.postTranslationJob(job=single_job)
         self.assertEqual(job['opstat'], 'ok')
-        self.assertIsNotNone(job['response']['job']['job_id'])
+        self.assertTrue(job['response']['job']['job_id'] is not None)
         self.created_job_ids.append(job['response']['job']['job_id'])
 
     def test_postJobComment(self):
