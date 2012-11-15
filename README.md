@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/myGengo/mygengo-python.png)](http://travis-ci.org/myGengo/mygengo-python)
+--- DEPRECATED: All future updates to the Gengo Python Library can be found [here](https://github.com/gengo/gengo-python) ---
 
 Gengo Python Library (for the [Gengo API](http://gengo.com/))
 ========================================================================================================
